@@ -37,7 +37,11 @@ export default {
 
   methods: {
     next() {
-      this.index++;
+      if (this.index < this.questions.length) {
+        this.index++;
+      } else {
+        this.index = 0;
+      }
     },
     increment(isCorrect) {
       if (isCorrect) {
