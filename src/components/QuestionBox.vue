@@ -10,10 +10,9 @@
           v-for="(answer, index) in answers"
           :key="index"
           @click="selectAnswer(index)"
-          >{{ answer }}</b-list-group-item
-        >
+          >{{ answer }}
+        </b-list-group-item>
       </b-list-group>
-
       <b-button variant="primary" href="#">Submit</b-button>
       <b-button variant="success" href="#" @click="next">Next</b-button>
     </b-jumbotron>
@@ -27,7 +26,7 @@ export default {
     next: Function,
   },
   data() {
-    selectedIndex: null;
+    return { selectedIndex: null };
   },
   computed: {
     answers() {
@@ -50,6 +49,11 @@ export default {
 <style scoped>
 .list-group {
   margin-bottom: 15px;
+}
+
+.list-group-item:hover {
+  background: #eee;
+  cursor: pointer;
 }
 .btn {
   margin: 0 5px;
