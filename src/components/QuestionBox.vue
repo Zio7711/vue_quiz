@@ -1,10 +1,7 @@
 <template>
   <div class="qustion_box_container">
-    <b-jumbotron
-      header="BootstrapVue"
-      lead="Bootstrap v4 Components for Vue.js 2"
-    >
-      <template #lead> Some question here? </template>
+    <b-jumbotron>
+      <template slot="lead"> {{ currentQuestion.question }} </template>
 
       <hr class="my-4" />
 
@@ -15,3 +12,11 @@
     </b-jumbotron>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    currentQuestion: Object,
+  },
+};
+</script>
